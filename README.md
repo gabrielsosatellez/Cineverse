@@ -116,6 +116,3 @@ El instalador de escritorio debe generarse localmente.
 
 ---
 
-## 🎓 Proyecto académico
-
-Proyecto desarrollado como parte del módulo de Desarrollo de Aplicaciones Multiplataforma (DAM).
