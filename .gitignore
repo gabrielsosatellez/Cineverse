@@ -1,24 +1,17 @@
-# Node / Electron
-Cineverse_web/cineverse-desktop/node_modules/
-Cineverse_web/cineverse-desktop/dist/
+# Node / Frontend
+**/node_modules/
+**/.cache/
+**/dist/
+**/build/
 
-# React
-frontend-react/build/
+# Desktop / installers
+arranque_instaladores/
+Cineverse_web/cineverse_desktop/
 
-# Logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+# IDEs
+**/.idea/
+.vscode/
 
-# Java
-target/
-*.jar
-
-# Android
-*.apk
-*.aab
-.gradle/
-build/
-
-# Ejecutables
+# Binaries
 *.exe
+*.msi
