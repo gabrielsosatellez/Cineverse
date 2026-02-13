@@ -37,11 +37,11 @@ CineVerse/
 
 1. Crear la base de datos en MySQL:
 
-CREATE DATABASE cineverse;
+CREATE DATABASE cineverse_db;
 
 2. Configurar la base de datos en `springboot/src/main/resources/application.properties`:
 
-spring.datasource.url=jdbc:mysql://localhost:3306/cineverse  
+spring.datasource.url=jdbc:mysql://localhost:3306/cineverse_db  
 spring.datasource.username=root  
 spring.datasource.password=TU_CONTRASEÑA  
 spring.jpa.hibernate.ddl-auto=update  
@@ -71,8 +71,7 @@ npm install
 
 3. Ejecutar en local:
 
-npm run dev  
-(o npm start según configuración del proyecto)
+npm run dev o npm start
 
 Disponible en:  
 http://localhost:3000  
