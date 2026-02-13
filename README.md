@@ -2,9 +2,9 @@
 
 CineVerse es una plataforma completa de gestión de cine compuesta por:
 
-- Aplicación web para administración (React)
-- Backend en Spring Boot
-- Aplicación móvil Android para clientes
+- Aplicación web para administración (React)  
+- Backend en Spring Boot  
+- Aplicación móvil Android para clientes  
 
 Permite la gestión de películas, salas, sesiones y la compra de entradas con selección de asientos en tiempo real, además de un sistema de chat entre clientes y personal del cine.
 
@@ -12,11 +12,22 @@ Permite la gestión de películas, salas, sesiones y la compra de entradas con s
 
 ## Estructura del proyecto
 
-CineVerse/
+CineVerse/  
  ├── springboot/                 Backend Spring Boot  
  ├── Cineverse_web/              Aplicación web (React)  
+ │    └── cineverse-web/         Proyecto React  
  ├── cineverse_app_movil/        Aplicación móvil Android  
  └── README.md  
+
+---
+
+## Requisitos previos
+
+- Java JDK 17  
+- MySQL Server + MySQL Workbench  
+- Node.js (LTS)  
+- Git  
+- Android Studio  
 
 ---
 
@@ -24,30 +35,35 @@ CineVerse/
 
 ### Backend (Spring Boot)
 
-1. Configurar la base de datos en `application.properties`:
+1. Crear la base de datos en MySQL:
+
+CREATE DATABASE cineverse;
+
+2. Configurar la base de datos en `springboot/src/main/resources/application.properties`:
 
 spring.datasource.url=jdbc:mysql://localhost:3306/cineverse  
-spring.datasource.username=usuario  
-spring.datasource.password=contraseña  
+spring.datasource.username=root  
+spring.datasource.password=TU_CONTRASEÑA  
+spring.jpa.hibernate.ddl-auto=update  
 
-2. Compilar el proyecto:
+3. Compilar el proyecto:
 
 mvn clean package  
 
-3. Ejecutar el backend:
+4. Ejecutar el backend:
 
 java -jar target/cineverse-0.0.1-SNAPSHOT.jar  
 
 El backend se ejecuta en:  
-http://localhost:8080
+http://localhost:8080  
 
 ---
 
 ### Aplicación Web (React)
 
-1. Acceder a la carpeta:
+1. Acceder a la carpeta del frontend:
 
-cd Cineverse_web/cineverse_web  
+cd Cineverse_web/cineverse-web  
 
 2. Instalar dependencias:
 
@@ -55,21 +71,22 @@ npm install
 
 3. Ejecutar en local:
 
-npm start  
+npm run dev  
+(o npm start según configuración del proyecto)
 
 Disponible en:  
-http://localhost:3000
+http://localhost:3000  
 
 ---
 
 ### Aplicación móvil (Android)
 
-1. Abrir `cineverse_app_movil` en Android Studio  
-2. Verificar la URL del backend en Retrofit:
+1. Abrir la carpeta `cineverse_app_movil` en Android Studio  
+2. Verificar la URL del backend en la configuración de Retrofit:
 
 BASE_URL = "http://10.0.2.2:8080"  
 
-3. Ejecutar en emulador o dispositivo físico
+3. Ejecutar la aplicación en un emulador o dispositivo físico  
 
 ---
 
@@ -93,7 +110,7 @@ Compra de entradas (App móvil)
 - Selección de asientos  
 - Carrito de compra  
 - Compra de entradas  
-- Generación de tickets en PDF  
+- Generación de tickets  
 - Visualización de tickets comprados  
 
 Comunicación en tiempo real  
@@ -102,17 +119,8 @@ Comunicación en tiempo real
 
 ---
 
-## Mejoras implementadas
-
-- Generación automática de entradas en PDF  
-- Chat en tiempo real  
-
----
-
 ## Notas
 
-Los archivos binarios generados (instaladores, ejecutables y builds) no se incluyen en el repositorio debido a las limitaciones de tamaño de GitHub.  
-El instalador de escritorio debe generarse localmente.
-
----
+- Los archivos generados automáticamente (node_modules, builds, APKs, etc.) no se incluyen en el repositorio.  
+- El backend debe estar arrancado antes de iniciar la aplicación web o móvil para que las llamadas a la API funcionen correctamente.
 
