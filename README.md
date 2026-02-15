@@ -54,7 +54,7 @@ spring.jpa.hibernate.ddl-auto=update
 
 3. Compilar el proyecto:
 
-mvn clean package  
+mvn clean package o mvnw clean package (en Windows)
 
 4. Ejecutar el backend:
 
@@ -136,7 +136,10 @@ Estas funcionalidades están disponibles para usuarios con rol EMPLOYEE o ADMIN:
   Permite crear salas de cine y definir su capacidad.  
 
 - Gestión de sesiones:  
-  Permite asignar películas a salas en una fecha y hora concreta.  
+  Permite asignar películas a salas en una fecha y hora concreta.
+
+- Gestión de tickets:
+  Permite cambiar los asientos ocupados a otros libres o liberarlos directamente.
 
 - Gestión de usuarios y roles:  
   El administrador puede asignar roles (ADMIN, EMPLOYEE, USER).  
